@@ -24,7 +24,7 @@ const CONSTANTS = {
       select: 'form-control'
     },
     html: {
-      dropdownCaret: '<span class="caret"></span>',
+      dropdownCaret: '',
       icon: '<i class="%s %s"></i>',
       inputGroup: '<div class="input-group">%s<span class="input-group-btn">%s</span></div>',
       pageDropdown: ['<ul class="dropdown-menu" role="menu">', '</ul>'],
@@ -57,7 +57,7 @@ const CONSTANTS = {
       select: 'form-control'
     },
     html: {
-      dropdownCaret: '<span class="caret"></span>',
+      dropdownCaret: '',
       icon: '<i class="%s %s"></i>',
       inputGroup: '<div class="input-group">%s<div class="input-group-append">%s</div></div>',
       pageDropdown: ['<div class="dropdown-menu">', '</div>'],
@@ -91,7 +91,7 @@ const CONSTANTS = {
     },
     html: {
       dataToggle: 'data-bs-toggle',
-      dropdownCaret: '<span class="caret"></span>',
+      dropdownCaret: '', 
       icon: '<i class="%s %s"></i>',
       inputGroup: '<div class="input-group">%s%s</div>',
       pageDropdown: ['<div class="dropdown-menu">', '</div>'],
@@ -105,8 +105,17 @@ const CONSTANTS = {
       toolbarDropdownItem: '<label class="dropdown-item dropdown-item-marker">%s</label>',
       toolbarDropdownSeparator: '<div class="dropdown-divider"></div>'
     }
+  },
+    fallback: {
+    classes: {
+      buttonActive: 'active',
+      buttons: 'secondary',
+    },
+    html: {
+      dropdownCaret: '',
+    }
   }
-}[bootstrapVersion]
+}[bootstrapVersion] || CONSTANTS.fallback;
 
 const DEFAULTS = {
   ajax: undefined,
